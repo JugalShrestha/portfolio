@@ -19,7 +19,6 @@ const Navbar = React.forwardRef(({scrollToComponent},ref) => {
 
   const handleDarkMode = () =>{
     setDarkMode(!isDarkMode);
-    console.log("toggled" + isDarkMode);
     if(isDarkMode)
     {
       document.documentElement.style.setProperty('--p1-color', '#0D0D0D');
