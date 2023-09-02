@@ -459,13 +459,28 @@ body #contact-page form button {
   font-size: var(--header-font-size);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1300px) {
   :root {
-    --header-font-size: 2.5vh;
-    --big-font-size: 5vh;
+    --big-font-size: 13vh;
+  }
+}
+@media screen and (max-width: 800px) {
+  :root {
+    --header-font-size: 3vh;
+    --big-font-size: 6vh;
   }
   .navbar {
     padding: 1vh !important;
+  }
+  .navbar .nav-option {
+    padding: 1vh !important;
+    border: none !important;
+    background: var(--p2-color) !important;
+  }
+  .navbar .nav-option:last-child {
+    background: none !important;
+    width: var(--big-font-size) !important;
+    height: var(--big-font-size) !important;
   }
   .page {
     display: flex !important;
@@ -477,7 +492,7 @@ body #contact-page form button {
     padding: 5vh 0 !important;
   }
   #hero-page {
-    gap: 2vh !important;
+    gap: 1vh !important;
   }
   #hero-page .scroll-nav {
     position: relative !important;
@@ -485,7 +500,8 @@ body #contact-page form button {
     top: 0 !important;
     bottom: 0 !important;
     right: 0 !important;
-    width: 80% !important;
+    width: 100% !important;
+    padding: 0 3vh !important;
     display: flex !important;
     flex-direction: row !important;
     align-items: flex-start !important;
@@ -496,7 +512,8 @@ body #contact-page form button {
     font-size: var(--big-font-size) !important;
   }
   #hero-page .hero-page-contents {
-    width: 80%;
+    width: 100% !important;
+    padding: 3vh !important;
     height: -moz-max-content !important;
     height: max-content !important;
     display: flex !important;
@@ -511,7 +528,7 @@ body #contact-page form button {
     top: 0 !important;
     bottom: 0 !important;
     right: 0 !important;
-    width: 80% !important;
+    width: 100% !important;
   }
   #hero-page .hero-page-contents .left-content {
     gap: 0.5vh !important;
@@ -519,11 +536,14 @@ body #contact-page form button {
   #hero-page .hero-page-contents .left-content .text {
     display: none !important;
   }
+  #hero-page .hero-page-contents .right-content {
+    padding: 1vh !important;
+  }
   #hero-page .hero-page-contents .big-content {
-    width: 80% !important;
+    width: 100% !important;
   }
   #hero-page .hero-page-contents .big-content img {
-    transform: scale(1.5) !important;
+    transform: scale(1.6) !important;
   }
   #project-page .projects {
     gap: 1vh !important;
