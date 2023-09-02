@@ -15,6 +15,26 @@ const Navbar = React.forwardRef(({scrollToComponent},ref) => {
   };
 
   const [scrolled, setScrolled] = useState(false);
+  const [isDarkMode, setDarkMode] = useState(true);
+
+  const handleDarkMode = () =>{
+    setDarkMode(!isDarkMode);
+    console.log("toggled" + isDarkMode);
+    if(isDarkMode)
+    {
+      document.documentElement.style.setProperty('--p1-color', '#0D0D0D');
+      document.documentElement.style.setProperty('--p2-color', '#262626');
+      document.documentElement.style.setProperty('--s1-color', '#F2F2F2');
+      document.documentElement.style.setProperty('--s2-color', '#D9D9D9');
+    }
+    else
+    {
+      document.documentElement.style.setProperty('--s1-color', '#0D0D0D');
+      document.documentElement.style.setProperty('--s2-color', '#262626');
+      document.documentElement.style.setProperty('--p1-color', '#F2F2F2');
+      document.documentElement.style.setProperty('--p2-color', '#D9D9D9');
+    }
+  }
 
   useEffect(()=>{
 
@@ -23,7 +43,7 @@ const Navbar = React.forwardRef(({scrollToComponent},ref) => {
     const checkScroll = () => {
       if (!isScrolling) {
         // Add a buffer of a few pixels around 99 scrollY
-        if (window.scrollY >= 50) {
+        if (window.scrollY >= 100) {
           setScrolled(true);
         } else {
           setScrolled(false);
@@ -49,7 +69,7 @@ const Navbar = React.forwardRef(({scrollToComponent},ref) => {
         <div className="nav-options">
             <div onClick={handleClick(scrollToComponent.workPageRef)} className="nav-option">works</div>
             <div onClick={handleClick(scrollToComponent.contactPageRef)} className="nav-option">contact</div>
-            <div className="nav-option">🌙</div>    
+            <div className="nav-option"><img onClick={handleDarkMode} src="/images/light-mode-toggle.svg" alt="mode toggle" /></div>    
         </div>
     </div>
   )

@@ -3,7 +3,8 @@ import Navbar from "./assets/components/Navbar"
 import ProjectPage from "./assets/pages/ProjectPage"
 import PageHeader from "./assets/components/PageHeader"
 import ContactPage from "./assets/pages/ContactPage"
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
+import Loading from "./assets/components/Loading"
 
 const App = () => {
 
@@ -11,14 +12,26 @@ const App = () => {
   const workPageRef = useRef(null);
   const contactPageRef = useRef(null);
 
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(()=>{
+    setTimeout(()=>setIsLoading(false),100)
+  },[])
+
   return (
     <>
-      <Navbar scrollToComponent={{homePageRef,workPageRef,contactPageRef}}/>
-      <HeroPage ref={homePageRef}/>
-      <PageHeader ref={workPageRef} header="works:"/>
-      <ProjectPage />
-      <PageHeader ref={contactPageRef} header="contact:"/>
-      <ContactPage/>
+    {isLoading ? 
+      <Loading/>
+      :
+      <div className="everything">
+        <Navbar scrollToComponent={{homePageRef,workPageRef,contactPageRef}}/>
+        <HeroPage ref={homePageRef}/>
+        <PageHeader ref={workPageRef} header="works:"/>
+        <ProjectPage />
+        <PageHeader ref={contactPageRef} header="contact:"/>
+        <ContactPage/>
+      </div>
+     }
     </>
   )
 }
