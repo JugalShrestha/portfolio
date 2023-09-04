@@ -355,7 +355,7 @@ body #project-page .projects .project .project-body {
   justify-content: space-between;
   gap: 3vh;
   padding: 0 3vh !important;
-  height: 60vh;
+  height: 80vh;
 }
 body #project-page .projects .project .project-body .project-image {
   width: 50%;
@@ -375,19 +375,17 @@ body #project-page .projects .project .project-body .project-contents {
 }
 body #project-page .projects .project .project-body .project-contents .project-desc {
   width: 100%;
-  height: 100%;
+  height: -moz-min-content;
+  height: min-content;
   padding: 3vh;
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-  gap: 5vh;
-  background: var(--p2-color);
-}
-body #project-page .projects .project .project-body .project-contents .project-desc div {
-  display: flex;
+  justify-content: center;
   flex-direction: column;
   gap: 2vh;
+  background: var(--p2-color);
+  font-size: var(--header-font-size);
+  text-transform: uppercase;
 }
 body #project-page .projects .project .project-body .project-contents .project-desc span {
   font-weight: bold;
@@ -396,8 +394,7 @@ body #project-page .projects .project .project-body .project-contents .project-d
 }
 body #project-page .projects .project .project-body .project-contents .project-link {
   width: 100%;
-  height: -moz-max-content;
-  height: max-content;
+  height: 100%;
   position: relative;
   text-align: center;
   overflow: hidden;
@@ -559,8 +556,12 @@ body #contact-page form button {
   #hero-page .hero-page-contents .right-content {
     padding: 1vh !important;
   }
+  #hero-page .hero-page-contents .bottom-content {
+    display: none !important;
+  }
   #hero-page .hero-page-contents .big-content {
     width: 100% !important;
+    height: 40vh !important;
   }
   #hero-page .hero-page-contents .big-content img {
     transform: scale(1.6) !important;

@@ -15,12 +15,12 @@ const HeroPage = React.forwardRef((props,ref) => {
             <div className="bottom-content">
                 <div className="text">Not your typical developer!</div>
             </div>
+            <div className="right-content">
+                <div className="text">Hi!<br/> I am Jugal Shrestha,</div>
+            </div>
             <div className="big-content">
                 <div className="overlay"></div>
                 <img src={photo} alt="A man looking right with a smile" />
-            </div>
-            <div className="right-content">
-                <div className="text">Hi!<br/> I am Jugal Shrestha,</div>
             </div>
             <div className="top-content"></div>
         </div>
