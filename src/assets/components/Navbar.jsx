@@ -65,7 +65,7 @@ const Navbar = React.forwardRef(({scrollToComponent},ref) => {
 
   return (
     <div ref={ref} className={scrolled?"navbar scrolled": "navbar"}>
-        <div onClick={handleClick(scrollToComponent.homePageRef)} className="logo">jugal.s.</div>
+        <div onClick={handleClick(scrollToComponent.homePageRef)} className="logo">jugal s.</div>
         <div className="nav-options">
             <div onClick={handleClick(scrollToComponent.workPageRef)} className="nav-option">works</div>
             <div onClick={handleClick(scrollToComponent.contactPageRef)} className="nav-option">contact</div>

@@ -1,15 +1,15 @@
 const project_data = [
     {
         name: "nischal malakar",
-        desc: "A digital marketer based in Dubai,The portfolio was made on the basis of the client’s need. The portfolio contains some of the brands he has worked with and the skills plus services that he offers!",
-        techStack: "Html, Scss, Javascript",
+        desc: "A Digital marketer based in Dubai, a thriving hub for businesses in the Middle East. With a wealth of experience and expertise in the digital marketing landscape, he has established a remarkable track record of helping businesses succeed in the dynamic online realm. His services encompass a wide spectrum, from optimizing search engine visibility to crafting compelling content and managing impactful social media campaigns."
+        ,techStack: "Html, Scss, Javascript",
         link: "https://www.nischalmalakar.com.np/",
         photo: "/images/nischal-malakar-portfolio-sample.webp",
     }
     ,
     {
         name: "junu mali",
-        desc: "an artist specialized in thanka who does a bit of everything. an artist who can paint beautiful modern or abstract themed paintings. and also an artist who is an art teacher teaching her life long. she inspires thousands of her followers to be creative and inspiring. she tells us about how she has followed her dream work and is still inspiring thousand others to follow their dream work no matter how the society percieves it."
+        desc: "A multi-talented creative visionary, specializing in the intricate art of Thangka painting while effortlessly traversing the diverse realms of modern and abstract art. With profound expertise in the ancient craft of Thangka. As a dedicated art teacher, she imparts her wisdom and passion to countless students, inspiring them to embrace their artistic aspirations and defy societal norms. Her journey from pursuing her dream work to becoming an influential figure, inspiring others to follow their creative paths, underscores the idea that true success lies in pursuing one's passions fearlessly, regardless of societal expectations. She is not just an artist but a transformative force, fostering creativity and self-expression in all who cross her path."
         ,techStack: "Html, Scss, Javascript",
         link: "https://www.junumali.com.np/",
         photo: "/images/junu-mali-portfolio-sample.webp",

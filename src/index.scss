@@ -14,6 +14,8 @@
     --big-font-size: 15vh;
     --font-family: 'Roboto Mono', monospace;
     --text-weight: 400;
+    --light-weight: 100;
+    --bold-weight: 700;
 }
 
 ::-webkit-scrollbar{
@@ -85,6 +87,7 @@ body{
     width: 100%;
     height: 100%;
     background: var(--bg-color);
+    overflow-x: hidden;
     
     .loading-screen{
         width: 100%;
@@ -125,10 +128,12 @@ body{
         transition: .2s ease;
         backdrop-filter: blur(1vh);
         background: rgba(255,255,255,0.5);
+        box-shadow: 0 0 2vh black;
         gap: 3vh !important;
         .logo{
             background: none !important;
             padding: 0 !important;
+            border: none !important;
             color: var(--s1-color) !important;
         }
     }
@@ -144,9 +149,9 @@ body{
         .logo{
             cursor: pointer;
             padding: 1vh;
-            color: var(--p1-color);
+            white-space: nowrap;
+            border: .3vh solid var(--s1-color);
             text-transform: uppercase;
-            background: var(--s1-color);
         }
         .nav-options{
             display: flex;
@@ -162,9 +167,9 @@ body{
                 padding-right: 3vh;
                 border-right: .3vh solid var(--s1-color);
                 &:last-child{
-                    width: var(--header-font-size);
-                    height: var(--header-font-size);
-                    padding: 0 !important;
+                    width: calc(var(--text-font-size) + .5vh);
+                    height: calc(var(--text-font-size) + .5vh);
+                    padding:  0 !important;
                     border-right: none !important;
                     fill: var(--n1-color) !important;
                     stroke: var(--n1-color) !important;
@@ -181,7 +186,9 @@ body{
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 3vh;
+        padding: 3vh;background-image: repeating-linear-gradient(0deg, var(--p2-color), var(--p2-color) .3vh, transparent .3vh, transparent);
+        background-size: 5vh 5vh;
+        background-color: var(--p1-color);
     }
     .page-header{
         width: 100%;
@@ -253,9 +260,11 @@ body{
                     font-size: var(--big-font-size);
                     text-transform: uppercase;
                     line-height: var(--big-font-size);
+                    font-weight: var(--light-weight);
                 }
                 .text{
                     display: flex;
+                    padding: 1vh;
                     font-size: var(--header-font-size);
                 }
             }
@@ -309,7 +318,7 @@ body{
             align-items: center;
             justify-content: center;
             width: 100%;
-            gap:10vh;
+            gap:3vh;
             .project{
                 display: flex;
                 flex-direction: column;
@@ -317,6 +326,7 @@ body{
                 justify-content: center;
                 padding: 3vh 0;
                 border-bottom: .3vh solid var(--s1-color);
+                border-top: .3vh solid var(--s1-color);
                 width: 100%;
                 gap: 3vh;
                 .project-header{
@@ -330,32 +340,30 @@ body{
                         font-size: var(--big-font-size);
                         line-height: var(--big-font-size);
                         padding: 1vh;
+                        font-weight: var(--light-weight);
                         border-top: .5vh solid var(--s1-color);
                         border-bottom: .5vh solid var(--s1-color);
-                    }
-
-                    @keyframes blink {
-                        to,from{
-                            opacity: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        span{
+                            font-size: var(--big-font-size);
+                            line-height: var(--big-font-size);
+                            font-weight: var(--light-weight);
+                            overflow: hidden;
+                            white-space: nowrap;
                         }
-                        50%{
-                            opacity: 0;
-                        }
                     }
-
                 }
                 .project-body{
-                    display: flex;
-                    flex-wrap: nowrap;
-                    align-items: center;
-                    justify-content: space-between;
+                    display: grid;
+                    grid-template-columns: auto auto;
                     gap: 3vh;
                     padding: 0 3vh !important;
-                    height: 80vh;
                     .project-image{
-                        width: 50%;
-                        height: 100%;
-                        background: linear-gradient(15deg, var(--s1-color),var(--s2-color),var(--p1-color),var(--p2-color));
+                        width: auto;
+                        height: 100%s;
+                        background: linear-gradient(15deg, var(--n1-color),var(--n2-color),var(--n3-color),var(--n4-color));
                         background-size: 400% 400%;
                         animation: gradient 5s ease infinite;           
                     }
@@ -378,7 +386,6 @@ body{
                             gap: 2vh;
                             background: var(--p2-color);
                             font-size: var(--header-font-size);
-                            text-transform: uppercase;
                             span{
                                 font-weight: bold;
                                 text-transform: uppercase;
@@ -432,6 +439,7 @@ body{
                                 justify-content: center;
                                 text-decoration: none;
                                 font-size: var(--big-font-size);
+                                font-weight: var(--light-weight);
                             }
                             svg{
                                 transition: .2s ease;
@@ -488,6 +496,7 @@ body{
 @media screen and (max-width: 1300px) {
     :root{
         --big-font-size: 8vh;
+        --light-weight: 400;
     }
     #hero-page{
         .left-content{
@@ -499,15 +508,18 @@ body{
 @media screen and (max-width: 800px) {
     :root{
         --header-font-size: 3vh;
-        --big-font-size: 6vh;
+        --big-font-size: 4vh;
     }
 
     .navbar{
-        padding: 1vh !important;
+        padding: 1vh 2vh !important;
         .nav-option{
             padding: 1vh !important;
             border: none !important;
         }
+    }
+    .everything{
+        overflow: hidden;
     }
     .page{
         display: flex !important;
@@ -520,6 +532,7 @@ body{
 
     #hero-page{
         gap: 1vh !important;
+        padding: 0 !important;
         .scroll-nav{
             position: relative !important;
             left: 0 !important;
@@ -527,14 +540,15 @@ body{
             bottom: 0 !important;
             right: 0 !important;
             width: 100% !important;
+            height: min-content !important;
             padding: 0 3vh !important; 
-            display: flex !important;
+            display: none !important;
             flex-direction: row !important;
             align-items: flex-start !important;
             justify-content: space-between !important;
             .text{
                 text-transform: uppercase;
-                font-size: var(--big-font-size) !important;
+                font-size: var(--header-font-size) !important;
             }
         }
         .hero-page-contents{
@@ -544,7 +558,7 @@ body{
             display: flex !important;
             flex-direction: column !important;
             align-items: center !important;
-            gap: .5vh !important;
+            gap: 2vh !important;
             justify-content: center !important;
             .left-content, .right-content, .bottom-content{
                 position: relative !important;
@@ -555,7 +569,13 @@ body{
                 width: 100% !important; 
             }
             .left-content{
-                gap: .5vh !important;
+                flex-direction: row !important;
+                flex-wrap: wrap;
+                height: min-content !important;
+                justify-content: center !important;
+                align-items: center !important;
+                line-height: var(--header-font-size) !important;
+                gap: 3vh !important;
                 .text{
                     display: none !important;
                 }
@@ -569,8 +589,9 @@ body{
             .big-content{
                 width: 100% !important;
                 height: 40vh !important;
+                border-radius: 5vh;
                 img{
-                    transform: scale(1.6) !important;
+                    transform: scale(1.3) !important;
                 }
             }
         }
@@ -586,8 +607,7 @@ body{
                     }
                 }
                 .project-body{
-                    min-height: 60vh !important;
-                    height: max-content !important;
+                    grid-template-columns: auto !important;
                     flex-direction: column !important;
                     .project-image{
                         width: 100% !important;

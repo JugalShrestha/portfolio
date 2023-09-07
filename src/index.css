@@ -13,6 +13,8 @@
   --big-font-size: 15vh;
   --font-family: "Roboto Mono", monospace;
   --text-weight: 400;
+  --light-weight: 100;
+  --bold-weight: 700;
 }
 
 ::-webkit-scrollbar {
@@ -90,6 +92,7 @@ body {
   width: 100%;
   height: 100%;
   background: var(--bg-color);
+  overflow-x: hidden;
 }
 body .loading-screen {
   width: 100%;
@@ -127,11 +130,13 @@ body .scrolled {
   -webkit-backdrop-filter: blur(1vh);
           backdrop-filter: blur(1vh);
   background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 2vh black;
   gap: 3vh !important;
 }
 body .scrolled .logo {
   background: none !important;
   padding: 0 !important;
+  border: none !important;
   color: var(--s1-color) !important;
 }
 body .navbar {
@@ -147,9 +152,9 @@ body .navbar {
 body .navbar .logo {
   cursor: pointer;
   padding: 1vh;
-  color: var(--p1-color);
+  white-space: nowrap;
+  border: 0.3vh solid var(--s1-color);
   text-transform: uppercase;
-  background: var(--s1-color);
 }
 body .navbar .nav-options {
   display: flex;
@@ -167,8 +172,8 @@ body .navbar .nav-options .nav-option {
   border-right: 0.3vh solid var(--s1-color);
 }
 body .navbar .nav-options .nav-option:last-child {
-  width: var(--header-font-size);
-  height: var(--header-font-size);
+  width: calc(var(--text-font-size) + 0.5vh);
+  height: calc(var(--text-font-size) + 0.5vh);
   padding: 0 !important;
   border-right: none !important;
   fill: var(--n1-color) !important;
@@ -183,6 +188,9 @@ body .page {
   align-items: center;
   justify-content: center;
   padding: 3vh;
+  background-image: repeating-linear-gradient(0deg, var(--p2-color), var(--p2-color) 0.3vh, transparent 0.3vh, transparent);
+  background-size: 5vh 5vh;
+  background-color: var(--p1-color);
 }
 body .page-header {
   width: 100%;
@@ -259,9 +267,11 @@ body #hero-page .hero-page-contents .left-content .big-text {
   font-size: var(--big-font-size);
   text-transform: uppercase;
   line-height: var(--big-font-size);
+  font-weight: var(--light-weight);
 }
 body #hero-page .hero-page-contents .left-content .text {
   display: flex;
+  padding: 1vh;
   font-size: var(--header-font-size);
 }
 body #hero-page .hero-page-contents .right-content {
@@ -313,7 +323,7 @@ body #project-page .projects {
   align-items: center;
   justify-content: center;
   width: 100%;
-  gap: 10vh;
+  gap: 3vh;
 }
 body #project-page .projects .project {
   display: flex;
@@ -322,6 +332,7 @@ body #project-page .projects .project {
   justify-content: center;
   padding: 3vh 0;
   border-bottom: 0.3vh solid var(--s1-color);
+  border-top: 0.3vh solid var(--s1-color);
   width: 100%;
   gap: 3vh;
 }
@@ -337,30 +348,30 @@ body #project-page .projects .project .project-header .text {
   font-size: var(--big-font-size);
   line-height: var(--big-font-size);
   padding: 1vh;
+  font-weight: var(--light-weight);
   border-top: 0.5vh solid var(--s1-color);
   border-bottom: 0.5vh solid var(--s1-color);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
-@keyframes blink {
-  to, from {
-    opacity: 50%;
-  }
-  50% {
-    opacity: 0;
-  }
+body #project-page .projects .project .project-header .text span {
+  font-size: var(--big-font-size);
+  line-height: var(--big-font-size);
+  font-weight: var(--light-weight);
+  overflow: hidden;
+  white-space: nowrap;
 }
 body #project-page .projects .project .project-body {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto auto;
   gap: 3vh;
   padding: 0 3vh !important;
-  height: 80vh;
 }
 body #project-page .projects .project .project-body .project-image {
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(15deg, var(--s1-color), var(--s2-color), var(--p1-color), var(--p2-color));
+  width: auto;
+  height: 100% s;
+  background: linear-gradient(15deg, var(--n1-color), var(--n2-color), var(--n3-color), var(--n4-color));
   background-size: 400% 400%;
   animation: gradient 5s ease infinite;
 }
@@ -385,7 +396,6 @@ body #project-page .projects .project .project-body .project-contents .project-d
   gap: 2vh;
   background: var(--p2-color);
   font-size: var(--header-font-size);
-  text-transform: uppercase;
 }
 body #project-page .projects .project .project-body .project-contents .project-desc span {
   font-weight: bold;
@@ -434,6 +444,7 @@ body #project-page .projects .project .project-body .project-contents .project-l
   justify-content: center;
   text-decoration: none;
   font-size: var(--big-font-size);
+  font-weight: var(--light-weight);
 }
 body #project-page .projects .project .project-body .project-contents .project-link svg {
   transition: 0.2s ease;
@@ -482,6 +493,7 @@ body #contact-page form button {
 @media screen and (max-width: 1300px) {
   :root {
     --big-font-size: 8vh;
+    --light-weight: 400;
   }
   #hero-page .left-content {
     left: -50% !important;
@@ -490,14 +502,17 @@ body #contact-page form button {
 @media screen and (max-width: 800px) {
   :root {
     --header-font-size: 3vh;
-    --big-font-size: 6vh;
+    --big-font-size: 4vh;
   }
   .navbar {
-    padding: 1vh !important;
+    padding: 1vh 2vh !important;
   }
   .navbar .nav-option {
     padding: 1vh !important;
     border: none !important;
+  }
+  .everything {
+    overflow: hidden;
   }
   .page {
     display: flex !important;
@@ -510,6 +525,7 @@ body #contact-page form button {
   }
   #hero-page {
     gap: 1vh !important;
+    padding: 0 !important;
   }
   #hero-page .scroll-nav {
     position: relative !important;
@@ -518,15 +534,17 @@ body #contact-page form button {
     bottom: 0 !important;
     right: 0 !important;
     width: 100% !important;
+    height: -moz-min-content !important;
+    height: min-content !important;
     padding: 0 3vh !important;
-    display: flex !important;
+    display: none !important;
     flex-direction: row !important;
     align-items: flex-start !important;
     justify-content: space-between !important;
   }
   #hero-page .scroll-nav .text {
     text-transform: uppercase;
-    font-size: var(--big-font-size) !important;
+    font-size: var(--header-font-size) !important;
   }
   #hero-page .hero-page-contents {
     width: 100% !important;
@@ -536,7 +554,7 @@ body #contact-page form button {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 0.5vh !important;
+    gap: 2vh !important;
     justify-content: center !important;
   }
   #hero-page .hero-page-contents .left-content, #hero-page .hero-page-contents .right-content, #hero-page .hero-page-contents .bottom-content {
@@ -548,7 +566,14 @@ body #contact-page form button {
     width: 100% !important;
   }
   #hero-page .hero-page-contents .left-content {
-    gap: 0.5vh !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    height: -moz-min-content !important;
+    height: min-content !important;
+    justify-content: center !important;
+    align-items: center !important;
+    line-height: var(--header-font-size) !important;
+    gap: 3vh !important;
   }
   #hero-page .hero-page-contents .left-content .text {
     display: none !important;
@@ -562,9 +587,10 @@ body #contact-page form button {
   #hero-page .hero-page-contents .big-content {
     width: 100% !important;
     height: 40vh !important;
+    border-radius: 5vh;
   }
   #hero-page .hero-page-contents .big-content img {
-    transform: scale(1.6) !important;
+    transform: scale(1.3) !important;
   }
   #project-page .projects {
     gap: 1vh !important;
@@ -573,9 +599,7 @@ body #contact-page form button {
     font-size: var(--header-font-size) !important;
   }
   #project-page .projects .project .project-body {
-    min-height: 60vh !important;
-    height: -moz-max-content !important;
-    height: max-content !important;
+    grid-template-columns: auto !important;
     flex-direction: column !important;
   }
   #project-page .projects .project .project-body .project-image {
