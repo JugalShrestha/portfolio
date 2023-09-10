@@ -61,7 +61,7 @@ const HeroPage = React.forwardRef((props,ref) => {
                 <img src={photo} alt="A man looking right with a smile" />
             </motion.div>
             <div className="left-content">
-                <motion.div variants={fromLeftVairants} transition={{delay: 0.2,type: "spring",}} initial="initial" whileInView="animation"  className="big-text">creative</motion.div>
+                <motion.div variants={fromLeftVairants} transition={{delay: 0.2,type: "spring",}} initial="initial" whileInView="animation"  className="big-text">verified</motion.div>
                 <motion.div variants={fromLeftVairants} transition={{delay: 0.4,type: "spring",}} initial="initial" whileInView="animation"  className="big-text">problem</motion.div>
                 <motion.div variants={fromLeftVairants} transition={{delay: 0.6,type: "spring",}} initial="initial" whileInView="animation"  className="big-text">solver</motion.div>
                 <motion.div variants={fromLeftVairants} transition={{delay: 0.8,type: "spring",}} initial="initial" whileInView="animation"  className="text">Solving problems since day 0.</motion.div>

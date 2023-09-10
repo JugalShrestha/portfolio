@@ -261,6 +261,7 @@ body{
                     text-transform: uppercase;
                     line-height: var(--big-font-size);
                     font-weight: var(--light-weight);
+                    white-space: nowrap;
                 }
                 .text{
                     display: flex;
@@ -272,7 +273,7 @@ body{
                 position: absolute;
                 top: 0;
                 z-index: 1;
-                right: -35vh;
+                right: -45vh;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
@@ -281,6 +282,7 @@ body{
                     font-size: var(--big-font-size);
                     text-transform: uppercase;
                     line-height: var(--big-font-size);
+                    white-space: nowrap;
                 }
                 .text{
                     display: flex;

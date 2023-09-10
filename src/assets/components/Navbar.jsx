@@ -54,6 +54,20 @@ const Navbar = React.forwardRef(({scrollToComponent},ref) => {
         }, 100);
       }
     };
+    
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        setDarkMode(false);
+        document.documentElement.style.setProperty('--p1-color', '#0D0D0D');
+        document.documentElement.style.setProperty('--p2-color', '#262626');
+        document.documentElement.style.setProperty('--s1-color', '#F2F2F2');
+        document.documentElement.style.setProperty('--s2-color', '#D9D9D9');
+    } else {
+      setDarkMode(true);
+      document.documentElement.style.setProperty('--s1-color', '#0D0D0D');
+      document.documentElement.style.setProperty('--s2-color', '#262626');
+      document.documentElement.style.setProperty('--p1-color', '#F2F2F2');
+      document.documentElement.style.setProperty('--p2-color', '#D9D9D9');
+    }
 
     window.addEventListener('scroll',checkScroll)
     

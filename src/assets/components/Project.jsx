@@ -57,7 +57,7 @@ const fromTopVairants = {
               <span>{name+":"}</span>
               {desc}
           </motion.div>
-          <motion.div variants={fromBottomVairants} initial="initial" whileInView="animation" transition={{delay:.5,type:"spring"}} className="project-link">
+          <motion.div variants={fromBottomVairants} initial="initial" whileInView="animation" transition={{delay:.4,type:"spring"}} className="project-link">
             <a href={link} target="_blank" rel="noopener noreferrer">View Work! <svg viewBox="0 0 79 104" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 100.088L75 4M75 4H21.75M75 4V76.0661" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></a>
             <div className="overlay"></div>
           </motion.div>
