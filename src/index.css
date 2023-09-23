@@ -8,6 +8,7 @@
   --n3-color: #23a6d5;
   --n4-color: #23d5ab;
   --bg-color: var(--p1-color);
+  --image-filter: grayscale(0%);
   --text-font-size: 2vh;
   --header-font-size: 3.5vh;
   --big-font-size: 15vh;
@@ -68,6 +69,7 @@ img, svg {
      object-fit: cover;
   fill: var(--s1-color);
   stroke: var(--s1-color);
+  filter: var(--image-filter);
 }
 
 * {
@@ -244,7 +246,9 @@ body #hero-page .hero-page-contents .big-content .overlay {
 body #hero-page .hero-page-contents .big-content img {
   width: 100%;
   height: 100%;
-  transform: scale(1.5);
+  position: absolute;
+  transform: scale(1.05);
+  bottom: -10vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -377,6 +381,10 @@ body #project-page .projects .project .project-body .project-image {
   background-size: 400% 400%;
   animation: gradient 5s ease infinite;
 }
+body #project-page .projects .project .project-body .project-image img {
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
+}
 body #project-page .projects .project .project-body .project-contents {
   width: 100%;
   height: 100%;
@@ -397,7 +405,7 @@ body #project-page .projects .project .project-body .project-contents .project-d
   flex-direction: column;
   gap: 2vh;
   background: var(--p2-color);
-  font-size: var(--header-font-size);
+  font-size: var(--text-font-size);
 }
 body #project-page .projects .project .project-body .project-contents .project-desc span {
   font-weight: bold;
@@ -578,7 +586,8 @@ body #contact-page form button {
     gap: 3vh !important;
   }
   #hero-page .hero-page-contents .left-content .text {
-    display: none !important;
+    text-align: center;
+    font-size: var(--text-font-size) !important;
   }
   #hero-page .hero-page-contents .right-content {
     padding: 1vh !important;
@@ -592,6 +601,9 @@ body #contact-page form button {
     border-radius: 5vh;
   }
   #hero-page .hero-page-contents .big-content img {
+    position: relative !important;
+    -o-object-fit: contain !important;
+       object-fit: contain !important;
     transform: scale(1.3) !important;
   }
   #project-page .projects {

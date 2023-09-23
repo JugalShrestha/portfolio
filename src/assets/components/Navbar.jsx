@@ -21,17 +21,29 @@ const Navbar = React.forwardRef(({scrollToComponent},ref) => {
     setDarkMode(!isDarkMode);
     if(isDarkMode)
     {
+      window.localStorage.setItem("darkMode","true");
       document.documentElement.style.setProperty('--p1-color', '#0D0D0D');
       document.documentElement.style.setProperty('--p2-color', '#262626');
       document.documentElement.style.setProperty('--s1-color', '#F2F2F2');
       document.documentElement.style.setProperty('--s2-color', '#D9D9D9');
+      document.documentElement.style.setProperty('--n1-color', '#F2F2F2');
+      document.documentElement.style.setProperty('--n2-color', '#0D0D0D');
+      document.documentElement.style.setProperty('--n3-color', "#262626");
+      document.documentElement.style.setProperty('--n4-color', '#D9D9D9');
+      document.documentElement.style.setProperty('--image-filter', 'grayscale(1)');
     }
     else
     {
+      window.localStorage.setItem("darkMode","false");
       document.documentElement.style.setProperty('--s1-color', '#0D0D0D');
       document.documentElement.style.setProperty('--s2-color', '#262626');
       document.documentElement.style.setProperty('--p1-color', '#F2F2F2');
       document.documentElement.style.setProperty('--p2-color', '#D9D9D9');
+      document.documentElement.style.setProperty('--n1-color', '#ee7752');
+      document.documentElement.style.setProperty('--n2-color', '#e73cab');
+      document.documentElement.style.setProperty('--n3-color', '#23a6d5');
+      document.documentElement.style.setProperty('--n4-color', '#23d5ab');
+      document.documentElement.style.setProperty('--image-filter', 'grayscale(0)');
     }
   }
 
@@ -54,6 +66,8 @@ const Navbar = React.forwardRef(({scrollToComponent},ref) => {
         }, 100);
       }
     };
+
+    const darkModeChecker = window.localStorage.getItem("darkMode");
     
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         setDarkMode(false);
@@ -61,12 +75,70 @@ const Navbar = React.forwardRef(({scrollToComponent},ref) => {
         document.documentElement.style.setProperty('--p2-color', '#262626');
         document.documentElement.style.setProperty('--s1-color', '#F2F2F2');
         document.documentElement.style.setProperty('--s2-color', '#D9D9D9');
+        document.documentElement.style.setProperty('--n1-color', '#F2F2F2');
+        document.documentElement.style.setProperty('--n2-color', '#0D0D0D');
+        document.documentElement.style.setProperty('--n3-color', "#262626");
+        document.documentElement.style.setProperty('--n4-color', '#D9D9D9');
+        document.documentElement.style.setProperty('--image-filter', 'grayscale(1)');
+        if(darkModeChecker == "true"){
+          setDarkMode(false);
+          document.documentElement.style.setProperty('--p1-color', '#0D0D0D');
+          document.documentElement.style.setProperty('--p2-color', '#262626');
+          document.documentElement.style.setProperty('--s1-color', '#F2F2F2');
+          document.documentElement.style.setProperty('--s2-color', '#D9D9D9');
+          document.documentElement.style.setProperty('--n1-color', '#F2F2F2');
+          document.documentElement.style.setProperty('--n2-color', '#0D0D0D');
+          document.documentElement.style.setProperty('--n3-color', "#262626");
+          document.documentElement.style.setProperty('--n4-color', '#D9D9D9');
+          document.documentElement.style.setProperty('--image-filter', 'grayscale(1)');
+        }
+        else if(darkModeChecker == "false"){    
+          setDarkMode(true);
+          document.documentElement.style.setProperty('--s1-color', '#0D0D0D');
+          document.documentElement.style.setProperty('--s2-color', '#262626');
+          document.documentElement.style.setProperty('--p1-color', '#F2F2F2');
+          document.documentElement.style.setProperty('--p2-color', '#D9D9D9');
+          document.documentElement.style.setProperty('--n1-color', '#ee7752');
+          document.documentElement.style.setProperty('--n2-color', '#e73cab');
+          document.documentElement.style.setProperty('--n3-color', '#23a6d5');
+          document.documentElement.style.setProperty('--n4-color', '#23d5ab');
+          document.documentElement.style.setProperty('--image-filter', 'grayscale(0)');
+        }
     } else {
       setDarkMode(true);
       document.documentElement.style.setProperty('--s1-color', '#0D0D0D');
       document.documentElement.style.setProperty('--s2-color', '#262626');
       document.documentElement.style.setProperty('--p1-color', '#F2F2F2');
       document.documentElement.style.setProperty('--p2-color', '#D9D9D9');
+      document.documentElement.style.setProperty('--n1-color', '#ee7752');
+      document.documentElement.style.setProperty('--n2-color', '#e73cab');
+      document.documentElement.style.setProperty('--n3-color', '#23a6d5');
+      document.documentElement.style.setProperty('--n4-color', '#23d5ab');
+      document.documentElement.style.setProperty('--image-filter', 'grayscale(0)');
+      if(darkModeChecker == "true"){
+        setDarkMode(false);
+        document.documentElement.style.setProperty('--p1-color', '#0D0D0D');
+        document.documentElement.style.setProperty('--p2-color', '#262626');
+        document.documentElement.style.setProperty('--s1-color', '#F2F2F2');
+        document.documentElement.style.setProperty('--s2-color', '#D9D9D9');
+        document.documentElement.style.setProperty('--n1-color', '#F2F2F2');
+        document.documentElement.style.setProperty('--n2-color', '#0D0D0D');
+        document.documentElement.style.setProperty('--n3-color', "#262626");
+        document.documentElement.style.setProperty('--n4-color', '#D9D9D9');
+        document.documentElement.style.setProperty('--image-filter', 'grayscale(1)');
+      }
+      else if(darkModeChecker == "false"){    
+        setDarkMode(true);
+        document.documentElement.style.setProperty('--s1-color', '#0D0D0D');
+        document.documentElement.style.setProperty('--s2-color', '#262626');
+        document.documentElement.style.setProperty('--p1-color', '#F2F2F2');
+        document.documentElement.style.setProperty('--p2-color', '#D9D9D9');
+        document.documentElement.style.setProperty('--n1-color', '#ee7752');
+        document.documentElement.style.setProperty('--n2-color', '#e73cab');
+        document.documentElement.style.setProperty('--n3-color', '#23a6d5');
+        document.documentElement.style.setProperty('--n4-color', '#23d5ab');
+        document.documentElement.style.setProperty('--image-filter', 'grayscale(0)');
+      }
     }
 
     window.addEventListener('scroll',checkScroll)

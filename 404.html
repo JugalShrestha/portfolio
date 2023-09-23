@@ -4,7 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jugal Shrestha - 404</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      :root {
+        --p1-color: #f2f2f2;
+        --p2-color: #d9d9d9;
+        --s1-color: #0d0d0d;
+        --s2-color: #262626;
+        --n1-color: #ee7752;
+        --n2-color: #e73cab;
+        --n3-color: #23a6d5;
+        --n4-color: #23d5ab;
+        --bg-color: var(--p1-color);
+
+        --text-font-size: 2vh;
+        --header-font-size: 3.5vh;
+        --big-font-size: 15vh;
+        --font-family: "Roboto Mono", monospace;
+        --text-weight: 400;
+        --light-weight: 100;
+        --bold-weight: 700;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: var(--s1-color);
+        border: none;
+        outline: none;
+        font-family: var(--font-family);
+        font-size: var(--text-font-size);
+        font-weight: var(--text-weight);
+        text-decoration: none;
+      }
+
       body {
         width: 100%;
         height: 100vh;
@@ -12,14 +51,24 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 10vh;
+        background: var(--p1-color);
+        gap: 5vh;
+        background-image: repeating-linear-gradient(
+          0deg,
+          var(--p2-color),
+          var(--p2-color) 0.3vh,
+          transparent 0.3vh,
+          transparent
+        );
+        background-size: 5vh 5vh;
+        background-color: var(--p1-color);
       }
       a {
-        font-size: 15vh;
+        font-size: var(--header-font-size);
         padding: 2vh;
         text-decoration: none;
-        background: black;
-        color: white;
+        background: var(--s1-color);
+        color: var(--p1-color);
         text-transform: uppercase;
         border-radius: 1vh;
       }

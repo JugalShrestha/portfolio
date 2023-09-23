@@ -8,6 +8,8 @@
     --n3-color: #23a6d5;
     --n4-color: #23d5ab;
     --bg-color: var(--p1-color);
+    
+    --image-filter: grayscale(0%);
 
     --text-font-size: 2vh;
     --header-font-size: 3.5vh;
@@ -63,6 +65,7 @@ img, svg{
     object-fit: cover;
     fill: var(--s1-color);
     stroke: var(--s1-color);
+    filter: var(--image-filter);
 }
 
 *{
@@ -186,7 +189,8 @@ body{
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 3vh;background-image: repeating-linear-gradient(0deg, var(--p2-color), var(--p2-color) .3vh, transparent .3vh, transparent);
+        padding: 3vh;
+        background-image: repeating-linear-gradient(0deg, var(--p2-color), var(--p2-color) .3vh, transparent .3vh, transparent);
         background-size: 5vh 5vh;
         background-color: var(--p1-color);
     }
@@ -239,7 +243,9 @@ body{
                 img{
                     width: 100%;
                     height: 100%;
-                    transform: scale(1.5);
+                    position: absolute;
+                    transform: scale(1.05);
+                    bottom: -10vh;
                     object-fit: cover;
                 }
             }
@@ -367,7 +373,10 @@ body{
                         height: 100%s;
                         background: linear-gradient(15deg, var(--n1-color),var(--n2-color),var(--n3-color),var(--n4-color));
                         background-size: 400% 400%;
-                        animation: gradient 5s ease infinite;           
+                        animation: gradient 5s ease infinite;   
+                        img{
+                            object-fit: contain !important;
+                        }        
                     }
                     .project-contents{
                         width: 100%;
@@ -387,7 +396,7 @@ body{
                             flex-direction: column;
                             gap: 2vh;
                             background: var(--p2-color);
-                            font-size: var(--header-font-size);
+                            font-size: var(--text-font-size);
                             span{
                                 font-weight: bold;
                                 text-transform: uppercase;
@@ -579,7 +588,8 @@ body{
                 line-height: var(--header-font-size) !important;
                 gap: 3vh !important;
                 .text{
-                    display: none !important;
+                    text-align: center;
+                    font-size: var(--text-font-size) !important;
                 }
             }
             .right-content{
@@ -593,6 +603,8 @@ body{
                 height: 40vh !important;
                 border-radius: 5vh;
                 img{
+                    position: relative !important;
+                    object-fit: contain !important;
                     transform: scale(1.3) !important;
                 }
             }
