@@ -23,14 +23,14 @@ const App = () => {
     {isLoading ? 
       <Loading/>
       :
-      <div className="everything">
+      <>
         <Navbar scrollToComponent={{homePageRef,workPageRef,contactPageRef}}/>
         <HeroPage ref={homePageRef}/>
         <PageHeader ref={workPageRef} header="works:"/>
         <ProjectPage />
         <PageHeader ref={contactPageRef} header="contact:"/>
         <ContactPage/>
-      </div>
+      </>
      }
     </>
   )

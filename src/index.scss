@@ -8,6 +8,9 @@
     --n3-color: #23a6d5;
     --n4-color: #23d5ab;
     --bg-color: var(--p1-color);
+    --gradient-color:  linear-gradient(-45deg, var(--n1-color),var(--n2-color),var(--n3-color), var(--n4-color));
+    --bg-size: 200% 200%;
+    --animate-gradient: gradient 5s ease infinite;
     
     --image-filter: grayscale(0%);
 
@@ -55,6 +58,36 @@
     50% { border-color: orange; }
   }
 
+//   infinite marquee animation 
+@keyframes move-ltr {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+//   infinite marquee animation 
+@keyframes move-rtl {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(100%);
+    }
+}
+
+.project
+{
+    &:nth-child(even){
+        .marquee{
+        justify-content: flex-end !important;
+        }
+        .text{
+            animation: move-rtl 6s linear infinite !important;
+        }
+    }
+}
 html{
     scroll-behavior: smooth;
 }
@@ -81,14 +114,15 @@ img, svg{
     text-decoration: none;
 }
 
-#root{
-    width: 100%;
-    min-height: 100vh;
+.glass-bg{
+    background: rgba(255,255,255,0.45) !important;
+    -webkit-backdrop-filter: blur(13px) !important;
+    backdrop-filter: blur(13px) !important;
+    border: 1px solid rgba(255,255,255,0.225) !important;
 }
 
 body{
     width: 100%;
-    height: 100%;
     background: var(--bg-color);
     overflow-x: hidden;
     
@@ -114,7 +148,7 @@ body{
 
     }
 
-    .everything{
+    #everything{
         width: 100%;
         height: 100%;
         display: flex;
@@ -126,8 +160,8 @@ body{
     //Start of navbar
     .scrolled{
         padding: 1vh !important;
-        position: fixed;
-        width: 100%;
+        position: fixed !important;
+        top: 0 !important;
         transition: .2s ease;
         backdrop-filter: blur(1vh);
         background: rgba(255,255,255,0.5);
@@ -190,9 +224,6 @@ body{
         align-items: center;
         justify-content: center;
         padding: 3vh;
-        background-image: repeating-linear-gradient(0deg, var(--p2-color), var(--p2-color) .3vh, transparent .3vh, transparent);
-        background-size: 5vh 5vh;
-        background-color: var(--p1-color);
     }
     .page-header{
         width: 100%;
@@ -229,9 +260,9 @@ body{
             .big-content{
                 width: 100%;
                 height: 100%;
-                background: linear-gradient(-45deg, var(--n1-color),var(--n2-color),var(--n3-color), var(--n4-color));
-                background-size: 200% 200%;
-                animation: gradient 5s ease infinite; 
+                background: var(--gradient-color);
+                background-size: var(--bg-size);
+                animation: var(--animate-gradient); 
                 position: relative;     
                 overflow: hidden;
                 .overlay{
@@ -339,27 +370,26 @@ body{
                 gap: 3vh;
                 .project-header{
                     width: 100%;
-                    background: linear-gradient(-45deg, var(--n1-color),var(--n2-color),var(--n3-color),var(--p1-color));
-                    background-size: 300% 300%;
-                    animation: gradient 5s ease infinite; 
+                    background: var(--gradient-color);
+                    background-size: var(--bg-size);
+                    animation: var(--animate-gradient); 
                     text-transform: uppercase;
                     padding: 2vh 0;
-                    .text{
-                        font-size: var(--big-font-size);
-                        line-height: var(--big-font-size);
+                    .marquee{
                         padding: 1vh;
-                        font-weight: var(--light-weight);
+                        width: 100%;
                         border-top: .5vh solid var(--s1-color);
                         border-bottom: .5vh solid var(--s1-color);
                         display: flex;
-                        align-items: center;
                         justify-content: flex-start;
-                        span{
+                        overflow: hidden;
+                        .text{
                             font-size: var(--big-font-size);
                             line-height: var(--big-font-size);
                             font-weight: var(--light-weight);
-                            overflow: hidden;
                             white-space: nowrap;
+                            padding: 0 10vh;
+                            animation: move-ltr 6s linear infinite;
                         }
                     }
                 }
@@ -367,10 +397,28 @@ body{
                     display: grid;
                     grid-template-columns: auto auto;
                     gap: 3vh;
-                    padding: 0 3vh !important;
+                    margin: 0 3vh;
+                    position: relative;
+                    padding: 3vh !important;
+                    border-radius: 5vh;
+                    border: 1px solid rgba(255,255,255,0.225) !important;
+                    background: var(--gradient-color);
+                    background-size: var(--bg-size);
+                    animation: var(--animate-gradient);
+                    box-shadow: inset 0 0 10vh var(--p1-color) ;
+                    div{
+                        border-radius: 5vh;
+                    }
+                    .overlay{
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        pointer-events: all;
+                        background: radial-gradient(transparent 40%,var(--p1-color));
+                    }
                     .project-image{
                         width: auto;
-                        height: 100%s;
+                        height: 100%;
                         background: linear-gradient(15deg, var(--n1-color),var(--n2-color),var(--n3-color),var(--n4-color));
                         background-size: 400% 400%;
                         animation: gradient 5s ease infinite;   
@@ -424,16 +472,16 @@ body{
                                 background: linear-gradient(-45deg, var(--n1-color),var(--n2-color),var(--n3-color));
                                 background-size: 400% 400%;
                                 animation: gradient 2s ease infinite;  
-                                
                             }
 
                             @media (hover:hover) {
-                                .overlay{
-                                    width: 0% !important;
-                                }
                                 &:hover{
-                                    .overlay{
-                                        width: 100% !important;
+                                    a{
+                                        background: white;
+                                        color: black;
+                                    }
+                                    svg{
+                                        stroke: black;
                                     }
                                 }
                             }
@@ -616,7 +664,8 @@ body{
             gap: 1vh !important;
             .project{
                 .project-header{
-                    .text{    
+                    .text{
+                        padding: 0 3vh !important; 
                         font-size: var(--header-font-size) !important;
                     }
                 }
@@ -629,9 +678,12 @@ body{
                     .project-contents{
                         .project-link{
                             a{
+                                background: white;
+                                color: black;
                                 font-size: var(--header-font-size) !important;
                             }
                             svg{
+                                stroke: black !important;
                                 width: var(--header-font-size) !important;
                                 height: var(--header-font-size) !important;
                             }

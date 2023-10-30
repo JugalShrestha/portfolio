@@ -70,6 +70,7 @@ const Navbar = React.forwardRef(({scrollToComponent},ref) => {
     const darkModeChecker = window.localStorage.getItem("darkMode");
     
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      //Dark mode is activated on device
         setDarkMode(false);
         document.documentElement.style.setProperty('--p1-color', '#0D0D0D');
         document.documentElement.style.setProperty('--p2-color', '#262626');
@@ -105,6 +106,7 @@ const Navbar = React.forwardRef(({scrollToComponent},ref) => {
           document.documentElement.style.setProperty('--image-filter', 'grayscale(0)');
         }
     } else {
+      //Light mode is activated on device
       setDarkMode(true);
       document.documentElement.style.setProperty('--s1-color', '#0D0D0D');
       document.documentElement.style.setProperty('--s2-color', '#262626');
