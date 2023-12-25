@@ -16,7 +16,7 @@ const project_data = [
     {
         name: "bim21",
         desc: "A website that was built for my college  which can do your homeworks, make generation of a cover page for your assignments according the standards of my college, and also provide you with notes that are relevant to you!",
-        link: "https://jugalshrestha.github.io/bim21/",
+        link: "https://bim21.pages.dev/",
         photo: "/images/bim21-photo.webp",
     },
     {
