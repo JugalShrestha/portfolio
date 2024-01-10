@@ -54,7 +54,7 @@ const HeroPage = React.forwardRef((props,ref) => {
         {/* for the middle contents */}
         <div className="hero-page-contents">
             <motion.div variants={fromRightVairants} transition={{delay: 0.8,type: "spring",}} initial="initial" viewport={{ once: true }}  whileInView="animation"  className="right-content">
-                <div className="text">Hi!<br/> I am Jugal Shrestha,</div>
+                <div className="text">Hey, I{"'"}m Jugal!</div>
             </motion.div>
             <motion.div variants={fromBottomVairants}  initial="initial" viewport={{ once: true }} whileInView="animation"   className="big-content">
                 <div className="overlay"></div>

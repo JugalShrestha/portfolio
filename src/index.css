@@ -241,11 +241,11 @@ body #hero-page .scroll-nav {
   gap: 2vh;
 }
 body #hero-page .scroll-nav .text {
-  font-size: var(--header-font-size);
+  font-size: var(--text-font-size);
 }
 body #hero-page .scroll-nav svg {
   width: 4vh;
-  height: 20vh;
+  height: 10vh;
 }
 body #hero-page .hero-page-contents {
   width: 45vh;
@@ -305,9 +305,9 @@ body #hero-page .hero-page-contents .left-content .text {
 }
 body #hero-page .hero-page-contents .right-content {
   position: absolute;
-  top: 0;
+  top: -2vh;
   z-index: 1;
-  right: -45vh;
+  right: -50%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -551,17 +551,10 @@ body #contact-page form button {
     left: -50% !important;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1190px) {
   :root {
     --header-font-size: 3vh;
     --big-font-size: 4vh;
-  }
-  .navbar {
-    padding: 1vh 2vh !important;
-  }
-  .navbar .nav-option {
-    padding: 1vh !important;
-    border: none !important;
   }
   .everything {
     overflow: hidden;
@@ -609,7 +602,7 @@ body #contact-page form button {
     gap: 2vh !important;
     justify-content: center !important;
   }
-  #hero-page .hero-page-contents .left-content, #hero-page .hero-page-contents .right-content, #hero-page .hero-page-contents .bottom-content {
+  #hero-page .hero-page-contents .bottom-content {
     position: relative !important;
     left: 0 !important;
     top: 0 !important;
@@ -624,22 +617,150 @@ body #contact-page form button {
     height: min-content !important;
     justify-content: center !important;
     align-items: center !important;
+    left: 0 !important;
+    top: 85% !important;
+    width: 100% !important;
     line-height: var(--header-font-size) !important;
     gap: 3vh !important;
   }
   #hero-page .hero-page-contents .left-content .text {
     text-align: center;
     font-size: var(--text-font-size) !important;
+    width: 100% !important;
+    display: flex;
+    margin: -20vh !important;
+    align-items: center;
+    justify-content: center;
   }
   #hero-page .hero-page-contents .right-content {
     padding: 1vh !important;
+    right: 50% !important;
+    top: 2vh !important;
+  }
+  #hero-page .hero-page-contents .bottom-content {
+    display: none !important;
+  }
+  #hero-page .hero-page-contents .big-content {
+    width: 40vh !important;
+    height: auto !important;
+  }
+  #hero-page .hero-page-contents .big-content img {
+    position: relative !important;
+    -o-object-fit: contain !important;
+       object-fit: contain !important;
+    transform: scale(1.3) !important;
+  }
+  .project-body {
+    grid-template-columns: auto !important;
+  }
+  .project-body .project-image {
+    height: 30vh !important;
+  }
+  #contact-page .social-links {
+    width: 80% !important;
+  }
+  #contact-page form {
+    width: 80% !important;
+  }
+}
+@media (max-width: 450px) {
+  :root {
+    --header-font-size: 3vh;
+    --big-font-size: 4vh;
+  }
+  .navbar {
+    padding: 1vh 2vh !important;
+  }
+  .navbar .nav-option {
+    padding: 1vh !important;
+    border: none !important;
+  }
+  .everything {
+    overflow: hidden;
+  }
+  .page {
+    display: flex !important;
+    max-height: -moz-min-content !important;
+    max-height: min-content !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 5vh 0 !important;
+  }
+  #hero-page {
+    gap: 1vh !important;
+    padding: 5vh 0 !important;
+  }
+  #hero-page .scroll-nav {
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: -moz-min-content !important;
+    height: min-content !important;
+    padding: 0 3vh !important;
+    display: none !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+  }
+  #hero-page .scroll-nav .text {
+    text-transform: uppercase;
+    font-size: var(--header-font-size) !important;
+  }
+  #hero-page .hero-page-contents {
+    width: 100% !important;
+    padding: 3vh !important;
+    height: -moz-max-content !important;
+    height: max-content !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 2vh !important;
+    justify-content: center !important;
+  }
+  #hero-page .hero-page-contents .right-content {
+    white-space: nowrap !important;
+    right: 2vh !important;
+    padding: 1vh !important;
+    -webkit-backdrop-filter: blur(0.3vh);
+            backdrop-filter: blur(0.3vh);
+    border-radius: 2vh !important;
+    box-shadow: inset 0 0 10vh var(--p1-color);
+    border: 1px solid rgba(255, 255, 255, 0.225) !important;
+  }
+  #hero-page .hero-page-contents .right-content .text {
+    text-shadow: 1vh 1vh 1vh var(--p1-color);
+  }
+  #hero-page .hero-page-contents .left-content {
+    top: 75% !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    width: 90% !important;
+    row-gap: 1vh !important;
+    box-shadow: inset 0 0 10vh var(--p1-color);
+    padding: 1vh !important;
+    -webkit-backdrop-filter: blur(0.3vh);
+            backdrop-filter: blur(0.3vh);
+    border-radius: 2vh !important;
+    border: 1px solid rgba(255, 255, 255, 0.225) !important;
+  }
+  #hero-page .hero-page-contents .left-content .big-text {
+    font-size: var(--header-font-size) !important;
+    line-height: var(--header-font-size) !important;
+    text-shadow: 1vh 1vh 1vh var(--p1-color) !important;
+  }
+  #hero-page .hero-page-contents .left-content .text {
+    margin: 0 !important;
+    text-shadow: 1vh 1vh 1vh var(--p1-color) !important;
   }
   #hero-page .hero-page-contents .bottom-content {
     display: none !important;
   }
   #hero-page .hero-page-contents .big-content {
     width: 100% !important;
-    height: 40vh !important;
     border-radius: 5vh;
   }
   #hero-page .hero-page-contents .big-content img {
@@ -657,10 +778,17 @@ body #contact-page form button {
   }
   #project-page .projects .project .project-body {
     grid-template-columns: auto !important;
-    flex-direction: column !important;
   }
+}
+@media (max-width: 450px) and (hover: hover) {
+  #project-page .projects .project .project-body {
+    grid-template-columns: auto auto !important;
+  }
+}
+@media (max-width: 450px) {
   #project-page .projects .project .project-body .project-image {
     width: 100% !important;
+    position: relative !important;
   }
   #project-page .projects .project .project-body .project-contents .project-link a {
     background: white;
