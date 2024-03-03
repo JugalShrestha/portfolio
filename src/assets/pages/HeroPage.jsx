@@ -1,5 +1,5 @@
 import React from "react"
-import photo from "/images/jugal-shrestha-photo.webp"
+import photo from "/images/main-photo.webp"
 import {motion} from "framer-motion";
 
 const HeroPage = React.forwardRef((props,ref) => {
