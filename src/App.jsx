@@ -1,10 +1,9 @@
 import HeroPage from "./assets/pages/HeroPage"
 import Navbar from "./assets/components/Navbar"
-import ProjectPage from "./assets/pages/ProjectPage"
-import PageHeader from "./assets/components/PageHeader"
-import ContactPage from "./assets/pages/ContactPage"
 import { useEffect, useRef, useState } from "react"
 import Loading from "./assets/components/Loading"
+import ProjectPage from "./assets/pages/ProjectPage"
+import ContactPage from "./assets/pages/ContactPage"
 
 const App = () => {
 
@@ -26,10 +25,8 @@ const App = () => {
       <>
         <Navbar scrollToComponent={{homePageRef,workPageRef,contactPageRef}}/>
         <HeroPage ref={homePageRef}/>
-        <PageHeader ref={workPageRef} header="works:"/>
-        <ProjectPage />
-        <PageHeader ref={contactPageRef} header="contact:"/>
-        <ContactPage/>
+        <ProjectPage ref={workPageRef}/>
+        <ContactPage ref={contactPageRef}/>
       </>
      }
     </>
