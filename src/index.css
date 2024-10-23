@@ -69,7 +69,7 @@ img, svg {
 body {
   width: 100%;
   background: var(--bg-color);
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 body .loading-screen {
   width: 100%;
@@ -148,194 +148,163 @@ body .navbar .nav-options .nav-option:last-child {
 }
 body .hero-page {
   width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body .hero-page .welcome-card {
+  width: 100%;
+  height: 90%;
+  background-image: linear-gradient(#0d0d0d 0.2vh, transparent 0.2vh), linear-gradient(to right, #0d0d0d 0.2vh, transparent 0.2vh);
+  background-size: 10vh 10vh;
+  background-color: var(--white-color);
+}
+body .hero-page .welcome-card .graphics {
+  width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: 40% auto;
-  gap: 2vh;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 10vh;
+}
+body .hero-page .welcome-card .graphics .slogan {
+  position: absolute;
+  top: 50%;
+  left: 20vh;
+  transform: translateY(-50%);
+  font-size: var(--big-font-size);
+  z-index: 2;
   padding: 2vh;
 }
-body .hero-page .right-side {
-  width: 100%;
-  display: grid;
-  grid-template-rows: auto 70%;
-  gap: 2vh;
+body .hero-page .welcome-card .graphics .slogan img {
+  width: calc(var(--big-font-size) + 2vh);
+  height: var(--big-font-size);
 }
-body .hero-page .right-side .skill-marquee {
+body .hero-page .welcome-card .graphics .gradient-overlay {
+  position: absolute;
   width: 100%;
   height: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to top, var(--white-color), var(--white-color), transparent);
+}
+body .hero-page .welcome-card .graphics .name {
+  position: absolute;
+  right: 20vh;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  text-align: end;
+  display: flex;
+  flex-direction: column;
+}
+body .hero-page .welcome-card .graphics .name .first-name {
+  color: var(--p1-color);
+}
+body .hero-page .welcome-card .graphics .name div {
+  font-size: var(--big-font-size);
+  font-weight: var(--black-weight);
+}
+body .hero-page .welcome-card .graphics .name span {
+  font-size: var(--big-font-size);
+  font-weight: var(--black-weight);
+  color: var(--p1-color);
+}
+body .hero-page .welcome-card .graphics .avatar {
+  z-index: 2;
+  width: 70vh;
+  height: 70vh;
+}
+body .hero-page .welcome-card .graphics .mountain {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  bottom: 0;
+  z-index: 0;
+  left: 0;
+  filter: saturate(0);
+}
+body .marquee {
+  width: 100%;
+  flex-direction: row;
+  display: flex;
+  border: 0.3vh solid var(--light-shade-white-color);
+  border-right: none;
+  border-left: none;
+  overflow-x: hidden;
+}
+body .marquee .text {
+  padding: 2vh 0;
+  animation: 5s move-ltr linear infinite;
+  white-space: nowrap;
+  font-size: var(--small-text-font-size);
+}
+body .about-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  border: 0.3vh solid var(--light-shade-white-color);
-  border-radius: 2vh;
-  gap: 0vh;
-  padding: 2vh 0;
-  overflow: hidden;
-}
-body .hero-page .right-side .skill-marquee .marquee {
-  padding: 1vh;
-  width: 100%;
-  border-top: 0.5vh solid var(--s1-color);
-  border-bottom: 0.5vh solid var(--s1-color);
-  display: flex;
   justify-content: flex-start;
-  overflow: hidden;
-}
-body .hero-page .right-side .skill-marquee .marquee .text {
-  font-size: var(--header-font-size);
-  line-height: var(--header-font-size);
-  font-weight: var(--bold-weight);
-  white-space: nowrap;
-  padding: 0 1vh;
-  animation: move-ltr 6s linear infinite;
-}
-body .hero-page .right-side .skill-marquee .marquee .text span {
-  color: var(--p3-color);
-  font-size: var(--header-font-size);
-  line-height: var(--header-font-size);
-  font-weight: var(--bold-weight);
-}
-body .hero-page .right-side .skill-marquee .marquee:nth-child(2) {
-  justify-content: flex-end !important;
-}
-body .hero-page .right-side .skill-marquee .marquee:nth-child(2) .text {
-  animation: move-rtl 10s linear infinite !important;
-}
-body .hero-page .right-side .about-section {
   width: 100%;
   height: 100%;
+  padding: 4vh;
   background: var(--black-color);
-  color: var(--white-2-color);
-  border-radius: 2vh;
-  overflow: hidden !important;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-body .hero-page .right-side .about-section .overlay {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  pointer-events: none;
-}
-body .hero-page .right-side .about-section .overlay img {
-  -o-object-fit: fill;
-     object-fit: fill;
-}
-body .hero-page .right-side .about-section .header {
-  width: 100%;
-  position: relative;
-  z-index: 0;
-  padding: 2vh;
-}
-body .hero-page .right-side .about-section .header .text {
-  width: -moz-fit-content;
-  width: fit-content;
-  background: var(--black-color);
-  font-size: var(--big-font-size);
-  font-weight: var(--black-weight);
-  color: var(--white-color);
-  z-index: 1;
-  margin-left: 2vh;
-}
-body .hero-page .right-side .about-section .header .line {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
   border-bottom: 0.3vh solid var(--light-shade-white-color);
 }
-body .hero-page .right-side .about-section .body {
+body .about-page .about-section {
+  font-size: var(--big-font-size);
   text-align: justify;
-  padding: 1vh 4vh;
-  color: var(--white-color);
-  font-family: var(--normal-text-font-size);
-}
-body .hero-page .right-side .about-section .body span {
-  color: var(--white-color);
-  font-weight: var(--bold-weight);
-}
-body .hero-page .right-side .about-section .body li {
-  font-weight: var(--bold-weight);
-  color: var(--white-color);
-}
-body .hero-page .right-side .about-section .logo {
-  width: 20vh;
-  height: 20vh;
-  border-radius: 100%;
-  overflow: hidden;
-  position: absolute;
-  bottom: 10%;
-  right: 10%;
-  border: 1vh double var(--white-color);
-  padding: 1vh;
-}
-body .hero-page .right-side .about-section .logo img {
-  border-radius: 100%;
-  animation: rotate360 4s linear infinite;
-}
-body .welcome-card {
-  width: 100%;
-  height: auto;
-}
-body .welcome-card .graphics {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  z-index: 0;
-  background: var(--white-color);
-  overflow: hidden;
-  padding: 2vh;
-  border: 0.3vh solid var(--light-shade-white-color);
-  border-radius: 2vh;
-}
-body .welcome-card .graphics .slogan {
-  position: absolute;
-  bottom: 2vh;
-  left: 2vh;
-  font-size: var(--big-font-size);
   z-index: 1;
-  padding: 2vh;
+  color: var(--white-color);
 }
-body .welcome-card .graphics .gradient-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: linear-gradient(to top, var(--white-color) 10%, transparent, transparent);
-}
-body .welcome-card .graphics .name {
-  position: absolute;
-  left: 50%;
-  top: 2vh;
-  transform: translateX(-50%);
+body .about-page .about-section span {
   font-size: var(--big-font-size);
-  font-family: var(--style-font-family);
+  font-weight: var(--bold-weight);
+  background: var(--white-color);
 }
-body .welcome-card .graphics img {
-  padding: 5vh 2vh 0 0;
-  margin-bottom: -5vh;
-  z-index: 1 !important;
+body .about-page .skill-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  flex-direction: column;
+  z-index: 1;
 }
-body .welcome-card .graphics .sun {
-  width: 30%;
-  height: 30%;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -40%);
-  position: absolute;
-  background: var(--p2-color);
-  box-shadow: 0 0 3vh 3vh var(--p2-color);
-  border-radius: 100%;
-  z-index: -1 !important;
+body .about-page .skill-section .header {
+  font-size: var(--big-font-size);
+  font-style: italic;
+  -webkit-text-decoration: 0.3vh underline;
+          text-decoration: 0.3vh underline;
+  font-weight: var(--bold-weight);
+  margin: 2vh 0;
+  color: var(--white-color);
+}
+body .about-page .skill-section .skills {
+  display: flex;
+  list-style-type: none;
+  flex-direction: column;
+  width: 100%;
+}
+body .about-page .skill-section .skills .skill {
+  width: -moz-fit-content;
+  width: fit-content;
+  color: var(--white-color);
+  border-bottom: 0.3vh solid var(--p1-color);
+  font-size: var(--big-font-size);
+}
+body .about-page .skill-section .skills .skill span {
+  font-size: var(--big-font-size);
+  font-weight: var(--bold-weight);
+  color: var(--white-color);
+  background: var(--p1-color);
 }
 body .project-page {
   width: 100%;
@@ -353,7 +322,7 @@ body .project-page .header .marquee {
   border-top: 0.5vh solid var(--s1-color);
   border-bottom: 0.5vh solid var(--s1-color);
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   overflow: hidden;
 }
 body .project-page .header .marquee .text {
@@ -362,7 +331,7 @@ body .project-page .header .marquee .text {
   font-weight: var(--black-weight);
   white-space: nowrap;
   padding: 0 1vh;
-  animation: move-ltr 15s linear infinite;
+  animation: move-rtl 15s linear infinite;
 }
 body .project-page .projects {
   width: 100%;
@@ -541,29 +510,12 @@ body .contact-page form button:hover {
   }
 }
 @media (max-width: 1300px) {
-  .welcome-card {
-    padding: 0 !important;
-  }
-  .welcome-card .graphics .slogan {
-    bottom: 0.5vh !important;
-    left: 0.5vh !important;
-    padding: 0.5vh !important;
-  }
-  .about-section .header {
-    padding: 1vh !important;
-  }
-  .about-section .body {
-    padding: 1vh 2vh !important;
-  }
-  .about-section .logo {
-    top: 2vh !important;
-    right: 2vh !important;
-    width: 7vh !important;
-    height: 7vh !important;
-    padding: 0vh !important;
+  .welcome-card .graphics .avatar {
+    width: 60vh !important;
+    height: 60vh !important;
   }
 }
-@media (max-width: 1130px) {
+@media (max-width: 1160px) {
   :root {
     --normal-text-font-size: 2.2vh !important;
     --big-font-size: 6.3vh !important;
@@ -573,13 +525,11 @@ body .contact-page form button:hover {
   :root {
     --big-font-size: 6vh !important;
   }
-  .welcome-card .graphics img {
-    -o-object-fit: contain !important;
-       object-fit: contain !important;
+  .welcome-card .graphics .slogan {
+    left: 10vh !important;
   }
-  .welcome-card .graphics .sun {
-    width: 5vh !important;
-    height: 5vh !important;
+  .welcome-card .graphics .name {
+    right: 10vh !important;
   }
   .project-page .projects {
     grid-template-columns: 100% !important;
@@ -598,58 +548,44 @@ body .contact-page form button:hover {
     --header-font-size: 2.5vh !important;
     --big-font-size: 4vh !important;
   }
-  .about-section .header {
-    padding: 0.5vh !important;
+  .hero-page {
+    height: 50vh !important;
   }
-  .about-section .body {
-    text-align: left !important;
-    padding: 0 2vh 2vh 2vh !important;
+  .hero-page .graphics .slogan {
+    left: 3vh !important;
   }
-  .about-section .logo {
-    top: 1.5vh !important;
-    right: 1.5vh !important;
-    width: 4vh !important;
-    height: 4vh !important;
-    padding: 0vh !important;
-    border: none !important;
+  .hero-page .graphics .name {
+    right: 3vh !important;
+  }
+  .hero-page .graphics .avatar {
+    width: 40vh !important;
+    height: 40vh !important;
   }
 }
 @media (max-width: 700px) {
   :root {
     --big-font-size: 4vh !important;
   }
-  .hero-page {
-    grid-template-columns: 100% !important;
-    padding: 0 !important;
+  .hero-page .slogan {
+    transform: none !important;
+    bottom: 0 !important;
   }
-  .hero-page .welcome-card {
-    padding: 2vh !important;
-    padding-bottom: 0 !important;
+  .hero-page .name {
+    top: 5vh !important;
+    right: 50% !important;
+    flex-direction: row !important;
+    gap: 2vh;
   }
-  .hero-page .welcome-card .graphics {
-    border: none !important;
+  .hero-page .gradient-overlay {
+    background: linear-gradient(to top, var(--white-color), transparent) !important;
   }
-  .hero-page .welcome-card .slogan {
-    padding: 2vh !important;
+  .hero-page .avatar {
+    width: 50vh !important;
+    height: 50vh !important;
+    z-index: -1 !important;
   }
-  .hero-page .welcome-card .sun {
-    width: 5vh !important;
-    height: 5vh !important;
-  }
-  .hero-page .right-side {
-    height: auto !important;
-    grid-template-rows: auto auto !important;
-    gap: 2vh !important;
-  }
-  .hero-page .right-side .skill-marquee {
-    border-left: none !important;
-    border-right: none !important;
-    border: 0.3vh solid var(--light-shade-white-color);
-    border-radius: 0 !important;
-    padding: 0 !important;
-  }
-  .hero-page .right-side .about-section {
-    border-radius: 0 !important;
+  .about-page {
+    padding: 1vh !important;
   }
   .project-page .header {
     padding: 0 !important;

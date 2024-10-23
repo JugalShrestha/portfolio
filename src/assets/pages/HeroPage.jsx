@@ -1,7 +1,6 @@
 import React from "react"
-import AboutSection from "../components/AboutSection"
-import SkillMarquee from "../components/SkillMarquee"
 import WelcomeCard from "../components/WelcomeCard"
+import Marquee from "../components/Marquee"
 // import photo from "/images/avatar picture.webp"
 // import {motion} from "framer-motion";
 
@@ -55,10 +54,7 @@ const HeroPage = React.forwardRef((props,ref) => {
   return (
     <div ref={ref} className="hero-page">
         <WelcomeCard/>
-        <div className="right-side">
-            <SkillMarquee/>
-            <AboutSection/>
-        </div>
+        <Marquee text={"←●→  I'm offering my services! ←●→"}/>
     </div>
   )
 })
