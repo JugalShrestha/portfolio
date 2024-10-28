@@ -2,7 +2,7 @@ const Loading = () => {
   return (
     <div className="loading-screen">
         <div className="loading-object">
-            <img src="/images/logo.webp" alt="logo" />
+            <img src="/images/logo - circle.webp" alt="logo" />
         </div>
     </div>
   )

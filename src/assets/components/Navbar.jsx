@@ -17,11 +17,11 @@ const Navbar = React.forwardRef(({scrollToComponent},ref) => {
   return (
     <div ref={ref} className="navbar">
         <div onClick={handleClick(scrollToComponent.homePageRef)} className="logo">
-          <img src="/images/logo.webp"/>
+          <img src="/images/logo - circle.webp"/>
         </div>
         <div className="nav-options">
-            <div onClick={handleClick(scrollToComponent.aboutPageRef)} className="nav-option">about</div>
             <div onClick={handleClick(scrollToComponent.workPageRef)} className="nav-option">works</div>
+            <div onClick={handleClick(scrollToComponent.aboutPageRef)} className="nav-option">about</div>
             <div onClick={handleClick(scrollToComponent.contactPageRef)} className="nav-option">contact</div>
         </div>
     </div>

@@ -1,6 +1,5 @@
 import React from "react"
 import WelcomeCard from "../components/WelcomeCard"
-import Marquee from "../components/Marquee"
 // import photo from "/images/avatar picture.webp"
 // import {motion} from "framer-motion";
 
@@ -54,7 +53,6 @@ const HeroPage = React.forwardRef((props,ref) => {
   return (
     <div ref={ref} className="hero-page">
         <WelcomeCard/>
-        <Marquee text={"←●→  I'm offering my services! ←●→"}/>
     </div>
   )
 })

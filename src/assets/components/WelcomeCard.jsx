@@ -48,7 +48,7 @@ const WelcomeCard = () => {
   return (
     <motion.div variants={fromBottomVairants}  initial="initial" viewport={{ once: true }} whileInView="animation" transition={{delay:.1,type:"spring"}} className="welcome-card">
         <div className="graphics">
-        <motion.div variants={fromLeftVairants}  initial="initial" viewport={{ once: true }} whileInView="animation" transition={{delay:.2,type:"spring"}} className="slogan">ONE<br></br>STOP<br></br>SOLUTION</motion.div>
+        <motion.div variants={fromLeftVairants}  initial="initial" viewport={{ once: true }} whileInView="animation" transition={{delay:.2,type:"spring"}} className="slogan">ONE<br></br><span>STOP</span><br></br>SOLUTION</motion.div>
             <div className="gradient-overlay"></div>
             <motion.div variants={fromRightVairants}  initial="initial" viewport={{ once: true }} whileInView="animation" transition={{delay:.4,type:"spring"}} className="name">
               <div className="first-name">JUGAL</div>

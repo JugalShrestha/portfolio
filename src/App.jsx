@@ -27,8 +27,8 @@ const App = () => {
       <>
         <Navbar scrollToComponent={{homePageRef,workPageRef,contactPageRef,aboutPageRef}}/>
         <HeroPage ref={homePageRef}/>
-        <AboutSection ref={aboutPageRef}/>
         <ProjectPage ref={workPageRef}/>
+        <AboutSection ref={aboutPageRef}/>
         <ContactPage ref={contactPageRef}/>
       </>
      }

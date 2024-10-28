@@ -156,7 +156,7 @@ body{
     //hero page - the landing page
     .hero-page{
         width: 100%;
-        height: 70vh;
+        height: 60vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -164,7 +164,7 @@ body{
         //Welcome Card
         .welcome-card{
             width: 100%;
-            height: 90%;
+            height: 100%;
             background-image: linear-gradient(#0d0d0d .2vh, transparent .2vh), linear-gradient(to right, #0d0d0d .2vh, transparent .2vh);
             background-size: 10vh 10vh;
             background-color: var(--white-color);
@@ -186,6 +186,10 @@ body{
                     font-size: var(--big-font-size);
                     z-index: 2;
                     padding: 2vh;
+                    span{
+                        font-size: var(--big-font-size);
+                        color: var(--p1-color);
+                    }
                     img{
                         width: calc(var(--big-font-size) + 2vh);
                         height: var(--big-font-size);
@@ -257,57 +261,150 @@ body{
     }
     .about-page{
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
         width: 100%;
-        height: 100%;
-        padding: 4vh;
-        background: var(--black-color);
-        position: relative;
+        height: 70vh;
+        background: var(--p1-color);
+        overflow: hidden;
         border-bottom: .3vh solid var(--light-shade-white-color);
-        .about-section{
-            font-size: var(--big-font-size);
-            text-align: justify;
-            z-index: 1;
-            color: var(--white-color);
-            span{
-                font-size: var(--big-font-size);
-                font-weight: var(--bold-weight);
-                background: var(--white-color);
-            }
-        }
-        .skill-section{
+        .scrollable{
             display: flex;
             align-items: flex-start;
+            position: relative;
             justify-content: flex-start;
-            width: 100%;
+            gap: 25vh;
+            min-width: 100%;
+            height: 100%;
+            overflow-X: scroll;
+            overflow-y: hidden;
+        }
+        .hero-section{
+            min-height: 100%;
+            display: flex;
             flex-direction: column;
-            z-index: 1;
-            .header{
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 4vh;
+            .scroll-text{
                 font-size: var(--big-font-size);
-                font-style: italic;
-                text-decoration: .3vh underline;
-                font-weight: var(--bold-weight);
-                margin: 2vh 0;
-                color: var(--white-color);
+                opacity: 10%;
             }
-            .skills{
+            .skill-section{
                 display: flex;
-                list-style-type: none;
-                flex-direction: column;
-                width: 100%;
-                .skill{
-                    width: fit-content;
-                    color: var(--white-color);
-                    border-bottom: .3vh solid var(--p1-color);
-                    font-size: var(--big-font-size);
-                    span{
-                        font-size: var(--big-font-size);
-                        font-weight: var(--bold-weight);
+                gap: 2vh;
+                align-items: center;
+                justify-content: center;
+                .logo{
+                    width: 10vh;
+                    height: 10vh;
+                    border-radius: 100%;
+                    box-shadow: .3vh .3vh .5vh black;
+                }
+                .skills{
+                    border-left: .3vh solid var(--white-color);
+                    padding-left: 2vh;
+                    .skill{
                         color: var(--white-color);
-                        background: var(--p1-color);
+                        font-weight: var(--bold-weight);
                     }
+                }
+            }
+            .intro-header{
+                color: var(--white-2-color);
+                font-size: var(--header-font-size);
+                font-weight: var(--bold-weight);
+                white-space: nowrap;
+                img{
+                    width: calc( var(--header-font-size) + 4vh);
+                    height: calc( var(--header-font-size) + 4vh);
+                }
+            }
+        }
+        .story{
+            display: flex;
+            flex-direction: column;
+            gap: 1vh;
+            align-items: center;
+            height: 100%;
+            justify-content: space-between;
+            padding: 4vh;
+            #audio{    
+                cursor: pointer;
+                pointer-events: all;
+            }
+            .image{
+                width: 40vh;
+                height: 40vh;
+                margin-top: 5vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                pointer-events: none;
+                font-weight: var(--bold-weight);
+                img{
+                    filter: drop-shadow(1vh 1vh 1vh black);
+                }
+            }
+            .text{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: flex-end;
+                .small-text{
+                    color: var(--white-color);
+                    white-space: nowrap;
+                }
+                .big-text{
+                    color: var(--white-color);
+                    font-size: var(--header-font-size);
+                    font-weight: var(--bold-weight);
+                    white-space: nowrap;
+                }
+            }
+        }
+        .full-story{
+            display: flex;
+            flex-direction: column;
+            padding: 4vh;
+            gap: 2vh;
+            align-items: center;
+            height: 100%;
+            justify-content: center;
+            background: var(--white-color);
+            .subscription{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 4vh;
+                .text{
+                    white-space: nowrap;
+                }
+                .sub-btn{
+                    border: .3vh solid var(--black-color);
+                    border-radius: 1vh;
+                    font-weight: var(--bold-weight);
+                    padding: 2vh 4vh;
+                    cursor: pointer;
+                    box-shadow: .3vh .3vh .3vh black;
+                }
+            }
+            .divider{
+                font-weight: var(--bold-weight);
+                color: var(--p1-color);
+                font-size: var(--header-font-size);
+            }
+            .meet{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 4vh;
+                .meet-btn{
+                    width: 10vh;
+                    height: 7vh;
+                    cursor: pointer;
                 }
             }
         }
@@ -318,13 +415,10 @@ body{
         flex-direction: column;
         .header{
             width: 100%;
-            padding-bottom: 2vh;
-            border-bottom: .3vh solid var(--light-shade-white-color);
             .marquee{
                 padding: 1vh;
                 width: 100%;
-                border-top: .5vh solid var(--s1-color);
-                border-bottom: .5vh solid var(--s1-color);
+                border-top: .3vh solid var(--light-shade-white-color);
                 display: flex;
                 justify-content: flex-end;
                 overflow: hidden;
@@ -554,6 +648,18 @@ body{
             }
         }
     }
+    .about-page{
+        height: 50vh !important;
+        .scrollable{
+            gap: 15vh !important;
+            .story{
+                .image{
+                    width: 25vh !important;
+                    height: 25vh !important;
+                }
+            }
+        }
+    }
     .project-page{
         .projects{
             grid-template-columns: 100% !important;
@@ -618,8 +724,18 @@ body{
             z-index: -1 !important;
         }
     }
+    
     .about-page{
-        padding: 1vh !important;
+        height: 40vh !important;
+        .scrollable{
+            gap: 5vh !important;
+            .story{
+                .image{
+                    width: 20vh !important;
+                    height: 20vh !important;
+                }
+            }
+        }
     }
     .project-page{
         .header{

@@ -148,7 +148,7 @@ body .navbar .nav-options .nav-option:last-child {
 }
 body .hero-page {
   width: 100%;
-  height: 70vh;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,7 +156,7 @@ body .hero-page {
 }
 body .hero-page .welcome-card {
   width: 100%;
-  height: 90%;
+  height: 100%;
   background-image: linear-gradient(#0d0d0d 0.2vh, transparent 0.2vh), linear-gradient(to right, #0d0d0d 0.2vh, transparent 0.2vh);
   background-size: 10vh 10vh;
   background-color: var(--white-color);
@@ -180,6 +180,10 @@ body .hero-page .welcome-card .graphics .slogan {
   font-size: var(--big-font-size);
   z-index: 2;
   padding: 2vh;
+}
+body .hero-page .welcome-card .graphics .slogan span {
+  font-size: var(--big-font-size);
+  color: var(--p1-color);
 }
 body .hero-page .welcome-card .graphics .slogan img {
   width: calc(var(--big-font-size) + 2vh);
@@ -249,62 +253,153 @@ body .marquee .text {
 }
 body .about-page {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
   width: 100%;
-  height: 100%;
-  padding: 4vh;
-  background: var(--black-color);
-  position: relative;
+  height: 70vh;
+  background: var(--p1-color);
+  overflow: hidden;
   border-bottom: 0.3vh solid var(--light-shade-white-color);
 }
-body .about-page .about-section {
-  font-size: var(--big-font-size);
-  text-align: justify;
-  z-index: 1;
-  color: var(--white-color);
-}
-body .about-page .about-section span {
-  font-size: var(--big-font-size);
-  font-weight: var(--bold-weight);
-  background: var(--white-color);
-}
-body .about-page .skill-section {
+body .about-page .scrollable {
   display: flex;
   align-items: flex-start;
+  position: relative;
   justify-content: flex-start;
-  width: 100%;
-  flex-direction: column;
-  z-index: 1;
+  gap: 25vh;
+  min-width: 100%;
+  height: 100%;
+  overflow-X: scroll;
+  overflow-y: hidden;
 }
-body .about-page .skill-section .header {
-  font-size: var(--big-font-size);
-  font-style: italic;
-  -webkit-text-decoration: 0.3vh underline;
-          text-decoration: 0.3vh underline;
-  font-weight: var(--bold-weight);
-  margin: 2vh 0;
-  color: var(--white-color);
-}
-body .about-page .skill-section .skills {
+body .about-page .hero-section {
+  min-height: 100%;
   display: flex;
-  list-style-type: none;
   flex-direction: column;
-  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 4vh;
 }
-body .about-page .skill-section .skills .skill {
-  width: -moz-fit-content;
-  width: fit-content;
+body .about-page .hero-section .scroll-text {
+  font-size: var(--big-font-size);
+  opacity: 10%;
+}
+body .about-page .hero-section .skill-section {
+  display: flex;
+  gap: 2vh;
+  align-items: center;
+  justify-content: center;
+}
+body .about-page .hero-section .skill-section .logo {
+  width: 10vh;
+  height: 10vh;
+  border-radius: 100%;
+  box-shadow: 0.3vh 0.3vh 0.5vh black;
+}
+body .about-page .hero-section .skill-section .skills {
+  border-left: 0.3vh solid var(--white-color);
+  padding-left: 2vh;
+}
+body .about-page .hero-section .skill-section .skills .skill {
   color: var(--white-color);
-  border-bottom: 0.3vh solid var(--p1-color);
-  font-size: var(--big-font-size);
-}
-body .about-page .skill-section .skills .skill span {
-  font-size: var(--big-font-size);
   font-weight: var(--bold-weight);
+}
+body .about-page .hero-section .intro-header {
+  color: var(--white-2-color);
+  font-size: var(--header-font-size);
+  font-weight: var(--bold-weight);
+  white-space: nowrap;
+}
+body .about-page .hero-section .intro-header img {
+  width: calc(var(--header-font-size) + 4vh);
+  height: calc(var(--header-font-size) + 4vh);
+}
+body .about-page .story {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+  padding: 4vh;
+}
+body .about-page .story #audio {
+  cursor: pointer;
+  pointer-events: all;
+}
+body .about-page .story .image {
+  width: 40vh;
+  height: 40vh;
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  pointer-events: none;
+  font-weight: var(--bold-weight);
+}
+body .about-page .story .image img {
+  filter: drop-shadow(1vh 1vh 1vh black);
+}
+body .about-page .story .text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+body .about-page .story .text .small-text {
   color: var(--white-color);
-  background: var(--p1-color);
+  white-space: nowrap;
+}
+body .about-page .story .text .big-text {
+  color: var(--white-color);
+  font-size: var(--header-font-size);
+  font-weight: var(--bold-weight);
+  white-space: nowrap;
+}
+body .about-page .full-story {
+  display: flex;
+  flex-direction: column;
+  padding: 4vh;
+  gap: 2vh;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  background: var(--white-color);
+}
+body .about-page .full-story .subscription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4vh;
+}
+body .about-page .full-story .subscription .text {
+  white-space: nowrap;
+}
+body .about-page .full-story .subscription .sub-btn {
+  border: 0.3vh solid var(--black-color);
+  border-radius: 1vh;
+  font-weight: var(--bold-weight);
+  padding: 2vh 4vh;
+  cursor: pointer;
+  box-shadow: 0.3vh 0.3vh 0.3vh black;
+}
+body .about-page .full-story .divider {
+  font-weight: var(--bold-weight);
+  color: var(--p1-color);
+  font-size: var(--header-font-size);
+}
+body .about-page .full-story .meet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4vh;
+}
+body .about-page .full-story .meet .meet-btn {
+  width: 10vh;
+  height: 7vh;
+  cursor: pointer;
 }
 body .project-page {
   width: 100%;
@@ -313,14 +408,11 @@ body .project-page {
 }
 body .project-page .header {
   width: 100%;
-  padding-bottom: 2vh;
-  border-bottom: 0.3vh solid var(--light-shade-white-color);
 }
 body .project-page .header .marquee {
   padding: 1vh;
   width: 100%;
-  border-top: 0.5vh solid var(--s1-color);
-  border-bottom: 0.5vh solid var(--s1-color);
+  border-top: 0.3vh solid var(--light-shade-white-color);
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
@@ -531,6 +623,16 @@ body .contact-page form button:hover {
   .welcome-card .graphics .name {
     right: 10vh !important;
   }
+  .about-page {
+    height: 50vh !important;
+  }
+  .about-page .scrollable {
+    gap: 15vh !important;
+  }
+  .about-page .scrollable .story .image {
+    width: 25vh !important;
+    height: 25vh !important;
+  }
   .project-page .projects {
     grid-template-columns: 100% !important;
   }
@@ -585,7 +687,14 @@ body .contact-page form button:hover {
     z-index: -1 !important;
   }
   .about-page {
-    padding: 1vh !important;
+    height: 40vh !important;
+  }
+  .about-page .scrollable {
+    gap: 5vh !important;
+  }
+  .about-page .scrollable .story .image {
+    width: 20vh !important;
+    height: 20vh !important;
   }
   .project-page .header {
     padding: 0 !important;
