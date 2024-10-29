@@ -51,23 +51,23 @@ const AboutSection = React.forwardRef((props,ref)=>{
           {/* for skill section */}
           <div className="skill-section">
             <div className="logo">
-              <img src="/images/logo - circle.webp" alt="this is the logo" />
+              <img src="/images/logo.webp" alt="this is the logo" />
             </div>
             <div className="skills">
               <div className="skill">
-                I make apps for fun.
+                I make <span>apps</span> for fun.
               </div>
               <div className="skill">
-                I create wonder websites.
+                I create wonder <span>websites</span>.
               </div>
               <div className="skill">
-                I can edit like Picasso.
+                I can <span>edit</span> like Picasso.
               </div>
               <div className="skill">
-                I create 2D/ 3D animations too!
+                I create 2D/ 3D <span>animations</span> too!
               </div>
               <div className="skill">
-                I also create content on the side.
+                I also create <span>content</span> on the side.
               </div>
             </div>
           </div>
@@ -77,7 +77,7 @@ const AboutSection = React.forwardRef((props,ref)=>{
           {/* for the intro part */}
           <div className="intro-header">
             {"Every Hero has it's own origin story"} <img src="/images/hero-image.webp" alt="hero image" /> <br></br> 
-            {"& guess what this little guy has one too!"}
+            {"& guess what this "}<span>little guy</span>{" has one too!"}
           </div>
         </motion.div>
         {/* for the born part */}
@@ -108,7 +108,7 @@ const AboutSection = React.forwardRef((props,ref)=>{
             <audio ref={audioRef} src="/audio/thavayena.mp3" >Your Browser cannot play audio</audio>
           </div>
           <div className="text">
-            <div className="small-text">I am Nepali Justin Bieber</div>
+            <div className="small-text">This one is close to my heart!</div>
             <div className="big-text">Started Creating Songs at the age of 12</div>
           </div>
         </motion.div>

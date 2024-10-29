@@ -53,6 +53,25 @@ img, svg {
      object-fit: cover;
 }
 
+::-webkit-scrollbar {
+  width: 1vh;
+  height: 1.5vh;
+  background: var(--p2-color);
+}
+::-webkit-scrollbar:hover {
+  background: var(--p1-color);
+  border: 0.3vh solid var(--p2-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--black-color);
+  border-radius: 2vh;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--white-color);
+  border: 0.3vh solid var(--black-color);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -292,21 +311,32 @@ body .about-page .hero-section .skill-section .logo {
   width: 10vh;
   height: 10vh;
   border-radius: 100%;
-  box-shadow: 0.3vh 0.3vh 0.5vh black;
+}
+body .about-page .hero-section .skill-section .logo img {
+  border-radius: 100%;
 }
 body .about-page .hero-section .skill-section .skills {
   border-left: 0.3vh solid var(--white-color);
   padding-left: 2vh;
 }
 body .about-page .hero-section .skill-section .skills .skill {
-  color: var(--white-color);
+  color: var(--black-color);
   font-weight: var(--bold-weight);
 }
+body .about-page .hero-section .skill-section .skills .skill span {
+  font-weight: var(--bold-weight);
+  color: var(--white-color);
+}
 body .about-page .hero-section .intro-header {
-  color: var(--white-2-color);
+  color: var(--white-color);
   font-size: var(--header-font-size);
   font-weight: var(--bold-weight);
   white-space: nowrap;
+}
+body .about-page .hero-section .intro-header span {
+  font-size: var(--header-font-size);
+  font-weight: var(--bold-weight);
+  color: var(--p2-color);
 }
 body .about-page .hero-section .intro-header img {
   width: calc(var(--header-font-size) + 4vh);
@@ -400,6 +430,9 @@ body .about-page .full-story .meet .meet-btn {
   width: 10vh;
   height: 7vh;
   cursor: pointer;
+}
+body .about-page .full-story .meet .meet-btn img {
+  filter: drop-shadow(0.3vh 0.3vh 0.3vh black);
 }
 body .project-page {
   width: 100%;

@@ -59,6 +59,26 @@ img, svg{
     object-fit: cover;
 }
 
+::-webkit-scrollbar{
+    width: 1vh;
+    height: 1.5vh;
+    background: var(--p2-color);
+    &:hover{
+        background: var(--p1-color);
+        border: .3vh solid var(--p2-color);
+    }
+}
+
+
+::-webkit-scrollbar-thumb{
+    background: var(--black-color);
+    border-radius: 2vh;
+    &:hover{
+        background: var(--white-color);
+        border: .3vh solid var(--black-color);
+    }
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -297,22 +317,33 @@ body{
                     width: 10vh;
                     height: 10vh;
                     border-radius: 100%;
-                    box-shadow: .3vh .3vh .5vh black;
+                    img{
+                        border-radius: 100%;
+                    }
                 }
                 .skills{
                     border-left: .3vh solid var(--white-color);
                     padding-left: 2vh;
                     .skill{
-                        color: var(--white-color);
+                        color: var(--black-color);
                         font-weight: var(--bold-weight);
+                        span{
+                            font-weight: var(--bold-weight);
+                            color: var(--white-color);
+                        }
                     }
                 }
             }
             .intro-header{
-                color: var(--white-2-color);
+                color: var(--white-color);
                 font-size: var(--header-font-size);
                 font-weight: var(--bold-weight);
                 white-space: nowrap;
+                span{
+                    font-size: var(--header-font-size);
+                    font-weight: var(--bold-weight);
+                    color: var(--p2-color);
+                }
                 img{
                     width: calc( var(--header-font-size) + 4vh);
                     height: calc( var(--header-font-size) + 4vh);
@@ -405,6 +436,9 @@ body{
                     width: 10vh;
                     height: 7vh;
                     cursor: pointer;
+                    img{
+                        filter: drop-shadow(.3vh .3vh .3vh black);
+                    }
                 }
             }
         }
